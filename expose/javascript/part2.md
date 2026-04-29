@@ -24,21 +24,33 @@ E. `student.courseLoad[0]`
 13. Arithmetic
 
 A. `'3' + 2` is `32` because numbers are converted to strings for additive arithmetic.
+
 B. `'3' - 2` is `1` because strings are converted to numbers for arithmetic.
+
 C. `3 + null` is `3` because `null` is implicitly converted to `0` for arithmetic.
+
 D. `'3' + null` is `3null` because non-string values added to string values get converted to strings before additive arithmetic.
+
 E. `true + 3` is `4` because boolean `true` is converted to `1` for arithmetic. 
+
 F. `false + null` is `0` because `null` is converted to `0` for arithmetic and the boolean `false` is also considered `0` during arithmetic.
+
 G. `'3' + undefined` is `3undefined` because the non-string value, `undefined` gets converted to a string during additive arithmetic. No implicit conversion occurs beforehand, unlike other arithmetic operations, so `NaN` is not what is made into a string before addition. 
+
 H. `'3' - undefined` is `NaN` because `undefined` converts to `NaN` for arithmetic and `3` implied from string `'3'` subtracting `NaN` is `NaN`.
 
 14. Comparison
 
 A. `'2' > 1` is `true` because strings are converted to the number they represent during comparison with a number.
+
 B. `'2' < '12'` is `false` because values are compared in lexicographical order when they are both strings.
+
 C. `2 == '2'` is `true` because strings are converted to the number they represent during an equality check against a number.
+
 D. `2 === '2'` is `false` because `===` does not implicitly convert the values to the same type before the check. 
+
 E. `true == 2` is `false` because the boolean `true` is always `1` during a comparison.
+
 F. `true === Boolean(2)` is `true` because `Boolean()` function converts any value passed to it into a boolean - with any value other than `0` becoming a `true` boolean. 
     
 15. `==` checks for equality between objects at the level of converted/coerced value (converting both being compared to the same type depending on the types compared). `===` also ensures that they are the same type of object (for primitive types) but also the exact same object at a given address (for non-primitive types), comparing by reference instead of contents.
